@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caz de crimă</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1527489377706-5bf97e608852') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.7);
+            display: inline-block;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px red;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+
+        #rezultat {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        #rezultat strong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h1>Cine este criminalul?</h1>
+        <input type="password" id="parola" placeholder="Introdu parola...">
+        <button onclick="verificaParola()">Accesează</button>
+        <div id="rezultat">
+            <p><strong>Totul a început cu un trecut murdar, ascuns sub măști de prietenie.</strong></p>
+            <p>În 2022, Ana și Ioana s-au întâlnit într-un context care le-a marcat viețile pentru totdeauna.</p>
+            <p>Ana, devastată de pierderea familiei, s-a refugiat în droguri, iar Ioana, cunoscută în cercuri umbrite drept „Yonne”, i-a fost atât dealer, cât și prietenă.</p>
+            <p>Era o relație bazată pe fragilitate și dependență, care s-a destrămat când Ana a încercat să scape de demonii ei, alegând calea dezintoxicării.</p>
+            <p>Ani mai târziu, Ioana și Ana s-au regăsit, dar nu din dorință proprie. Alex, iubitul Anei, și Cristi, partenerul Ioanei, erau prieteni buni, așa că o excursie la cabană părea o idee inofensivă.</p>
+            <p>În realitate, tensiunea dintre cele două femei fierbea în tăcere. Ana descoperise că Ioana nu renunțase la afacerea cu droguri. O văzuse cu ochii ei, într-o întâlnire discretă cu un client.</p>
+            <p>Ana a decis să-i scrie lui Cristi că ar dori să vorbească.</p>
+            <p><strong>Ioana a aflat.</strong> A văzut mesajele și a înțeles că este în pericol. Din frica de a nu fi descoperită, la cabană, în noaptea crimei, Ioana a pus în mișcare un plan.</p>
+            <p>La ora 23:45, o pană de curent neașteptată a înghițit în întuneric cabana. Sub pretextul unei invitații la vin, Ioana l-a chemat pe Cristi în camera ei.</p>
+            <p>Acolo, cu un gest calculat, i-a strecurat somnifere în pahar. Cristi a adormit rapid, iar Ioana i-a luat arma de serviciu.</p>
+            <p>În liniștea nopții, Ioana a plecat spre lac, știind că Ana era acolo. Ce a urmat a fost o confruntare alimentată de ură și frică.</p>
+            <p>Pașii Ioanei și țipetele Anei au fost ultimele sunete înainte de un foc de armă care a sfâșiat liniștea.</p>
+            <p>Ana a căzut la pământ, iar Ioana s-a grăbit să ascundă urmele crimei.</p>
+            <p>S-a întors la cabană la 00:43, aruncând arma și bocancii în pădure, crezând că nimeni nu o va bănui.</p>
+            <p>Dar adevărul a început să iasă la iveală.</p>
+            <p>Un raport toxicologic care arăta somnifere în sângele lui Cristi, mesajele de amenințare trimise Anei, amprentele de pe arma găsită – toate au dus la vinovăția Ioanei.</p>
+            <p><strong>Ioana a fost prinsă în propria plasă.</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function verificaParola() {
+            var parola = document.getElementById("parola").value;
+            if (parola === "Ioana") {
+                document.getElementById("rezultat").style.display = "block";
+            } else {
+                alert("Parolă incorectă! Încearcă din nou.");
+            }
+        }
+    </script>
+
+</body>
+</html>
